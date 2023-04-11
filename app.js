@@ -51,9 +51,9 @@ function showShortcut(){
         <span class="dotted" onclick="showaction()">
         <ion-icon name="ellipsis-vertical-outline"></ion-icon>
         </span>
-        <a href="${Storage.InputUrl}" target="blank">
+        <a href="${"https://"+Storage.InputUrl}" target="blank">
 			<div class="add">
-            <p class="add-new" ${addClass}>${Storage.InputName.charAt(0)}</p>
+            <p class="add-new" id="randColor" ${addClass}>${Storage.InputName.charAt(0)}</p>
 			</div>
 			<label id="name">${Storage.InputName}</label>
         </a>
@@ -111,6 +111,8 @@ function getRandomColor() {
     let color = "#";
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * letters.length)];
+    //  document.getElementById("randColor").style.backgroundColor = color;
+
     }
     return color;
   }
